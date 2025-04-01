@@ -1,5 +1,31 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import './App.css'
+import '@mantine/core/styles.css';
+
+import { MantineProvider } from '@mantine/core';
+
+export default function App() {
+  return <MantineProvider>{
+    
+      (
+        <>
+          <h1>Hello Hog!</h1>
+          <div className="card">
+          </div>
+          <p>
+            No more button to hog++. Sad.
+          </p>
+        </>
+      )
+  
+  }</MantineProvider>;
+}
+
+
+
+
+
+{/*
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,3 +46,5 @@ function App() {
 }
 
 export default App
+
+*/}
