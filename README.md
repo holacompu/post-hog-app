@@ -1,4 +1,4 @@
-# Post hog!
+# Post hogs 🦔!
 
 ## Is this an April Fools' thing?
 
