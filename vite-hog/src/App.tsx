@@ -24,18 +24,19 @@ export default function App() {
     
       (
         <>
-          <h1>Hello Hog!</h1>
-          <div className="card">
-          </div>
-          <p>
-            No more button to hog++. Sad.
-          </p>
+          <h1>Post hogs 🦔</h1>
+
+          <p>The <u>only</u> social media where you're <u>only</u> allowed to post hedgehogs.</p>
+
+          <p><code>hog++</code> button coming soon!</p>
+
+
 
     <form onSubmit={form.onSubmit((values) => console.log(values))}>
       <TextInput
         withAsterisk
-        label="Hogname (must contain 'hog')"
-        placeholder="TheSmilingHog"
+        label="Sign up by typing your Hogname below 👇"
+        placeholder="Hogname (must contain 'hog')"
         key={form.key('email')}
         {...form.getInputProps('email')}
       />

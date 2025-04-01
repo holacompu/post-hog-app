@@ -33,10 +33,18 @@
   }
 }
 
-.card {
-  padding: 2em;
+code {
+  font-family: Consolas,"courier new";
+  color: rgb(255, 109, 18);
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+p {
+  font-size: 12px;
+}
+
+u {
+  color: rgb(255, 109, 18);
 }
