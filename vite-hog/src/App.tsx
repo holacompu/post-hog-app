@@ -1,6 +1,7 @@
 //import { useState } from 'react'
 import './App.css'
 import '@mantine/core/styles.css';
+import { useState } from 'react'
 
 import { MantineProvider } from '@mantine/core';
 
@@ -16,9 +17,11 @@ export default function App() {
     },
 
     validate: {
-      email: (value) => (/hog/i.test(value) ? null : 'Invalid hogname'),
+      email: (value) => (/h(o+)g/i.test(value) ? null : 'Invalid Hogname'),
     },
   });
+
+  const [count, setCount] = useState(0)
 
   return <MantineProvider> {
     
@@ -28,8 +31,11 @@ export default function App() {
 
           <p>The <u>only</u> social media where you're <u>only</u> allowed to post hedgehogs.</p>
 
-          <p><code>hog++</code> button coming soon!</p>
-
+          <Button onClick={() => setCount((count) => count + 1)}>
+          <code>hog++</code>
+          </Button>
+          <p><code>hog++</code> value = <b>{count}</b> 🦔s
+          </p>
 
 
     <form onSubmit={form.onSubmit((values) => console.log(values))}>
