@@ -9,18 +9,23 @@ import { Button, Checkbox, Group, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 export default function App() {
+  
+  //Signup form with Hogname + ToS validation
+  let chosenHogName: string[] = [];
+  
   const form = useForm({
     mode: 'uncontrolled',
     initialValues: {
-      email: '',
+      hogName: '',
       termsOfService: false,
     },
 
     validate: {
-      email: (value) => (/h(o+)g/i.test(value) ? null : 'Invalid Hogname'),
+      hogName: (value) => (/h(o+)g/i.test(value) ? null : 'Invalid Hogname'),
     },
   });
 
+  //Initial logic for the hog++ button
   const [count, setCount] = useState(0)
 
   return <MantineProvider> {
@@ -38,15 +43,15 @@ export default function App() {
           </p>
 
 
-    <form onSubmit={form.onSubmit((values) => console.log(values))}>
+    <form onSubmit={form.onSubmit((values) => (console.log(values)))}>
       <TextInput
         withAsterisk
         label="Sign up by typing your Hogname below 👇"
         placeholder="Hogname (must contain 'hog')"
-        key={form.key('email')}
-        {...form.getInputProps('email')}
+        key={form.key('hogName')}
+        {...form.getInputProps('hogName')}
       />
-
+          
       <Checkbox
         mt="md"
         label="I agree to have fun"
@@ -58,6 +63,8 @@ export default function App() {
         <Button type="submit">Sign up</Button>
       </Group>
     </form>
+
+            <p>Your Hogname is: {chosenHogName.push("hogName")}</p>
         </>
       )
   
