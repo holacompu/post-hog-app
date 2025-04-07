@@ -55,20 +55,16 @@ export default function App() {
           <Group justify="space-between" style={{ flex: 1 }}>
            <div>Post hogs 🦔</div>
             <Group ml="xl" gap={0} visibleFrom="sm">
-              <UnstyledButton className={classes.control}>Home</UnstyledButton>
-              <UnstyledButton className={classes.control}>Blog</UnstyledButton>
-              <UnstyledButton className={classes.control}>Contacts</UnstyledButton>
-              <UnstyledButton className={classes.control}>Support</UnstyledButton>
+              <UnstyledButton className={classes.control}>About</UnstyledButton>
+              <UnstyledButton className={classes.control}>Settings ⚙</UnstyledButton>
             </Group>
           </Group>
         </Group>
       </AppShell.Header>
 
       <AppShell.Navbar py="md" px={4}>
-        <UnstyledButton className={classes.control}>Home</UnstyledButton>
-        <UnstyledButton className={classes.control}>Blog</UnstyledButton>
-        <UnstyledButton className={classes.control}>Contacts</UnstyledButton>
-        <UnstyledButton className={classes.control}>Support</UnstyledButton>
+        <UnstyledButton className={classes.control}>About</UnstyledButton>
+        <UnstyledButton className={classes.control}>Settings ⚙</UnstyledButton>
       </AppShell.Navbar>
 
         <AppShell.Main pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}>
@@ -118,10 +114,10 @@ export default function App() {
 
             <AppShell.Footer p="md">
                <Group justify="center" gap="m">
-                  <Button variant="default">Aa</Button>
-                  <Button variant="default">Bb</Button>
-                  <Button variant="default">Cc</Button>
-                  <Button variant="default">Dd</Button>
+                  <Button variant="default">Txt</Button>
+                  <Button variant="default">Img</Button>
+                  <Button variant="default">Vid</Button>
+                  <Button variant="default">Lnk</Button>
                </Group>
             </AppShell.Footer>
 
