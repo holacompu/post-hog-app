@@ -44,8 +44,9 @@ export default function App() {
       <>
 
 <AppShell
-      header={{ height: 60, collapsed: !pinned, offset: true }}
+      header={{ height: 50, collapsed: !pinned, offset: true }}
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: true, mobile: !opened } }}
+      footer={{ height: 60 }}
       padding="md"
     >
       <AppShell.Header>
@@ -114,6 +115,16 @@ export default function App() {
             ))}
 
             </AppShell.Main>
+
+            <AppShell.Footer p="md">
+               <Group justify="center" gap="m">
+                  <Button variant="default">Aa</Button>
+                  <Button variant="default">Bb</Button>
+                  <Button variant="default">Cc</Button>
+                  <Button variant="default">Dd</Button>
+               </Group>
+            </AppShell.Footer>
+
         </AppShell>
       </>
     )
