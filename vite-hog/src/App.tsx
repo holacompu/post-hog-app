@@ -5,15 +5,20 @@ import { useState } from 'react'
 
 import { MantineProvider } from '@mantine/core';
 
-import { AppShell, Burger, Button, Checkbox, Group, TextInput, UnstyledButton } from '@mantine/core';
+import { AppShell, Burger, Button, Checkbox, Group, rem, Text, TextInput, UnstyledButton } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { useDisclosure } from '@mantine/hooks';
-import ReactLogo from './assets/react.svg';
+import { useDisclosure, useHeadroom } from '@mantine/hooks';
+//import ReactLogo from './assets/react.svg';
 import classes from './MobileNavbar.module.css';
+
+const lorem =
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ullam, ex cum repellat alias ea nemo. Ducimus ex nesciunt hic ad saepe molestiae nobis necessitatibus laboriosam officia, reprehenderit, earum fugiat?';
+
 
 export default function App() {
 
   const [opened, { toggle }] = useDisclosure();
+  const pinned = useHeadroom({ fixedAt: 120 });
   
   //Signup form with Hogname + ToS validation
   let chosenHogName: string[] = [];
@@ -39,7 +44,7 @@ export default function App() {
       <>
 
 <AppShell
-      header={{ height: 60 }}
+      header={{ height: 60, collapsed: !pinned, offset: true }}
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: true, mobile: !opened } }}
       padding="md"
     >
@@ -47,7 +52,7 @@ export default function App() {
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
-          
+           <div>Post hogs 🦔</div>
             <Group ml="xl" gap={0} visibleFrom="sm">
               <UnstyledButton className={classes.control}>Home</UnstyledButton>
               <UnstyledButton className={classes.control}>Blog</UnstyledButton>
@@ -65,11 +70,10 @@ export default function App() {
         <UnstyledButton className={classes.control}>Support</UnstyledButton>
       </AppShell.Navbar>
 
-        <AppShell.Main>
-          <h1>Post hogs 🦔</h1>
-          <p>
+        <AppShell.Main pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}>
+          <h4>
             The <u>only</u> social media where you're <u>only</u> allowed to post hedgehogs.
-          </p>
+          </h4>
           <Button onClick={() => setCount((count) => count + 1)}>
             <code>hog++</code>
           </Button>
@@ -100,6 +104,14 @@ export default function App() {
             </form>
 
               <p>Your Hogname is: {chosenHogName.push("hogName")}</p>
+
+            {Array(8)
+               .fill(0)
+               .map((_, index) => (
+            <Text size="lg" key={index} my="md" maw={600} mx="auto">
+              {lorem}
+            </Text>
+            ))}
 
             </AppShell.Main>
         </AppShell>
